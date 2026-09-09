@@ -1,5 +1,5 @@
 <main class="container mt-5">
-    <h2 class="mb-4">Sign In</h2>
+    <h2 class="mb-4">Create an account</h2>
 
     @if(errorMessage){
         <p class="alert alert-danger" role="alert">
@@ -7,7 +7,7 @@
         </p>
     }
 
-    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+    <form (ngSubmit)="onSubmit()" #signupform="ngForm">
         <section>
             <label class="form-label">Email</label>
             <input type="email" class="form-control" name="email" [(ngModel)]="email" required />
@@ -18,12 +18,12 @@
             <input type="password" class="form-control" name="password" [(ngModel)]="password" required />
         </section>
 
-        <button type="submit" class="btn btn-primary mt-3" [disabled]="isSubmitting || loginForm.invalid">
-            {{ isSubmitting ? 'Signing In...' : 'Sign In' }}
+        <button type="submit" class="btn btn-primary mt-3" [disabled]="isSubmitting || signupform.invalid">
+            {{ isSubmitting ? 'Creating Account...' : 'Create Account' }}
         </button>
     </form>
 
     <p class="mt-3 text-center">
-        Don't have an account? <a routerLink="/signup">Sign Up</a>.
+        Already have an account? <a routerLink="/login">Sign In</a>.
     </p>
 </main>
